@@ -1,1 +1,1 @@
-
+Contained in this folder is a map between all states at a given qubit level. Each file is a list, containing elements in the following format: (State j, Gate from i to j, State i, Entropy vector of State j). This contains all the information of the complete reachability diagram, and also the entropy vector information for each state.
