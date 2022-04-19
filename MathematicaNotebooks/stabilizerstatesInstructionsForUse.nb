@@ -1,0 +1,3626 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    160520,       3618]
+NotebookOptionsPosition[    154330,       3502]
+NotebookOutlinePosition[    154667,       3517]
+CellTagsIndexPosition[    154624,       3514]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["(stabilizerstates.wl) Instructions for Use", "Title",
+ CellChangeTimes->{{3.859334728113811*^9, 3.859334740904222*^9}, {
+  3.8593349638312674`*^9, 
+  3.859334971478429*^9}},ExpressionUUID->"9ad2b7bd-49c7-4233-8d78-\
+37327eebd5e9"],
+
+Cell["\<\
+Included within are instructions for use and examples pertaining to the \
+Mathematica package stabilizerstates.wl.\
+\>", "Text",
+ CellChangeTimes->{{3.8593347508480864`*^9, 
+  3.859334784693954*^9}},ExpressionUUID->"0a929cd5-8dfe-4b31-853a-\
+8ebd7eb0a502"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Package", " ", "can", " ", "be", " ", "downloaded", " ", "from", " ", 
+     RowBox[{"https", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"github", ".", "com"}], "/", "WMunizzi"}], "/", 
+         "StabilizerStateData"}], "/", "blob"}], "/", "main"}], "/", 
+      RowBox[{"stabilizerstates", ".", "wl"}]}], " ", "and", " ", "imported", 
+     " ", "to", " ", "Mathematica", " ", "notebook", " ", "from", " ", 
+     "whichever", " ", "external", " ", "storage", " ", "it", " ", "is", " ", 
+     "located", " ", 
+     RowBox[{"in", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+  "<<", "\"\</Applications/Mathematica.app/Contents/AddOns/Packages/\
+stabilizerstates.wl\>\""}]}]], "Input",
+ CellChangeTimes->{{3.859384252671562*^9, 3.859384319430355*^9}, {
+  3.859384444600754*^9, 3.8593844464305573`*^9}, {3.859384498432386*^9, 
+  3.859384508141947*^9}, {3.8593845486634617`*^9, 3.859384550798545*^9}, {
+  3.85938463108112*^9, 3.859384638439885*^9}, {3.8593847593265533`*^9, 
+  3.8593848339562683`*^9}},
+ CellLabel->
+  "In[6725]:=",ExpressionUUID->"7d555748-0a85-4529-9484-8625b9ea8950"],
+
+Cell[CellGroupData[{
+
+Cell["Examples of General Functions", "Chapter",
+ CellChangeTimes->{{3.8593348412219343`*^9, 3.859334843326421*^9}, {
+  3.859384198605009*^9, 
+  3.859384201283285*^9}},ExpressionUUID->"045accc8-5a36-476c-991b-\
+605a96f9554c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "Swap", " ", "function", " ", "is", " ", "used", " ", 
+    "internally", " ", "within", " ", "certain", " ", "functions", " ", "to", 
+    " ", "swap", " ", "elements", " ", "of", " ", "a", " ", 
+    RowBox[{"list", ".", " ", "The"}], " ", "example", " ", "below", " ", 
+    "swaps", " ", "elements", " ", "at", " ", "indices", " ", "1", " ", "and",
+     " ", "3", " ", "in", " ", 
+    RowBox[{"OrderedList", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"OrderedList", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Swap", "[", 
+    RowBox[{"OrderedList", ",", "1", ",", "3"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.85938488328083*^9, 3.859385059451355*^9}, {
+  3.859385263443918*^9, 3.85938526384016*^9}},
+ CellLabel->
+  "In[6256]:=",ExpressionUUID->"7b8520e8-2f2a-4b32-bb7b-c79989d865b0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"3", ",", "2", ",", "1", ",", "4", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{{3.859384945882963*^9, 3.859385004291049*^9}, {
+  3.859385040368424*^9, 3.859385059690544*^9}, {3.859385260231278*^9, 
+  3.85938526423636*^9}},
+ CellLabel->
+  "Out[6257]=",ExpressionUUID->"de3ff486-797b-4ea0-b825-b92529d9a1ea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "The", " ", "PermutedIdentity", " ", "function", " ", "gives", " ", "the",
+      " ", 
+     SuperscriptBox["2", "n"], "x", " ", 
+     SuperscriptBox["2", "n"], " ", "permutation", " ", "matrix", " ", "that",
+      " ", "reorders", " ", "a", " ", "density", " ", "matrix", " ", "of", 
+     " ", "n", " ", "qubits", " ", "into", " ", "the", " ", "new", " ", 
+     "ordering", " ", 
+     RowBox[{"requested", ".", " ", "The"}], " ", "example", " ", "below", 
+     " ", "replaces", " ", "the", " ", "natural", " ", "ordering", " ", "1"}],
+     ",", "2", ",", 
+    RowBox[{"3", " ", "with", " ", "the", " ", "ordering", " ", "2"}], ",", 
+    "3", ",", "1."}], "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NewOrdering", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3", ",", "1"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"dimension", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"PermutedIdentity", "[", 
+    RowBox[{"dimension", ",", "NewOrdering"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859385275940341*^9, 3.859385374326339*^9}, {
+  3.8593854059589567`*^9, 3.8593855201955843`*^9}, {3.859385675761229*^9, 
+  3.8593857081881437`*^9}},
+ CellLabel->
+  "In[6264]:=",ExpressionUUID->"e8fe3df4-de87-4c07-a383-19d3b72155f6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.859385374659837*^9, {3.859385695117131*^9, 3.859385712124354*^9}},
+ CellLabel->
+  "Out[6266]=",ExpressionUUID->"bb4e4d3c-feb2-4c86-9ad1-424c12f88420"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples of Quantum Entropy Functions", "Chapter",
+ CellChangeTimes->{{3.8593348856238403`*^9, 3.859334889423501*^9}, {
+  3.859384203226767*^9, 
+  3.859384204731101*^9}},ExpressionUUID->"6eddb26f-6ea0-4350-b0cb-\
+40b75cfd30d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "DensityMatrix", " ", "function", " ", "gives", " ", "the", 
+    " ", "density", " ", "matrix", " ", "corresponding", " ", "to", " ", 
+    "the", " ", "input", " ", 
+    RowBox[{"ket", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"twoqubitsampleket", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "1", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"DensityMatrix", "[", "twoqubitsampleket", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859385625052951*^9, 3.859385668880027*^9}, {
+  3.85938572376814*^9, 3.85938576981855*^9}, {3.859386085189045*^9, 
+  3.859386089516541*^9}},
+ CellLabel->
+  "In[6293]:=",ExpressionUUID->"3b9a3046-ecbf-497c-9107-c694a39c8f12"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859385770490093*^9, 3.8593862938193073`*^9},
+ CellLabel->
+  "Out[6294]=",ExpressionUUID->"a22b2a6b-0303-4a73-8a81-32206e2fe8fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "KetProjector", " ", "function", " ", "projects", " ", "out", 
+    " ", "a", " ", "density", " ", "matrix", " ", "into", " ", "the", " ", 
+    "ket", " ", "representation", " ", "of", " ", "the", " ", "measurement", 
+    " ", 
+    RowBox[{"basis", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sampledensity", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"KetProjector", "[", "sampledensity", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859385777187314*^9, 
+  3.859385886188396*^9}},ExpressionUUID->"fed20258-73e5-4111-97aa-\
+d67f2905f5bf"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859385860535174*^9},
+ CellLabel->
+  "Out[6270]=",ExpressionUUID->"25491ca9-ee26-4ab5-9073-642bd0d1dfe0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "The", " ", "TraceSystem", " ", "function", " ", "gives", " ", "the", " ",
+      "reduced", " ", "density", " ", "matrix", " ", "of", " ", "a", " ", 
+     "subsystem", " ", "of", " ", "qubits"}], ",", " ", 
+    RowBox[{
+    "after", " ", "tracing", " ", "out", " ", "over", " ", "undesired", " ", 
+     RowBox[{"qubits", ".", " ", "For"}], " ", "example"}], ",", " ", 
+    RowBox[{
+    "we", " ", "can", " ", "trace", " ", "out", " ", "qubit", " ", "1", " ", 
+     "to", " ", "give", " ", "the", " ", "reduced", " ", "density", " ", 
+     "matrix", " ", "for", " ", "qubit", " ", "2"}], ","}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"TraceSystem", "[", 
+   RowBox[{"sampledensity", ",", 
+    RowBox[{"{", "1", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.859385874245091*^9, 3.859385998539055*^9}, {
+  3.8593862163035727`*^9, 3.859386259365595*^9}, {3.859386509194873*^9, 
+  3.859386509432784*^9}},ExpressionUUID->"4f5c2e04-b5bc-4225-89c2-\
+4a595df4b535"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859386169337123*^9, 3.859386261704101*^9},
+ CellLabel->
+  "Out[6289]=",ExpressionUUID->"d880d214-1746-4299-b2fb-f48255e44d67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Similarly", ",", " ", 
+    RowBox[{
+     RowBox[{
+     "computing", " ", "the", " ", "reduced", " ", "density", " ", "matrix", 
+      " ", "of", " ", "qubits", " ", "1", " ", "and", " ", "2", " ", "by", 
+      " ", "tracing", " ", "out", " ", "the", " ", "third", " ", "qubit", " ",
+       "in", " ", "a", " ", "3"}], "-", 
+     RowBox[{"qubit", " ", "system"}]}], ","}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"threequbitsampleket", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "1", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"threequbitsampledensity", " ", "=", " ", 
+     RowBox[{"DensityMatrix", "[", "threequbitsampleket", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"TraceSystem", "[", 
+    RowBox[{"threequbitsampledensity", ",", 
+     RowBox[{"{", "3", "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859386026076788*^9, 3.859386193665049*^9}, {
+  3.859386271191539*^9, 3.859386289367703*^9}, {3.859386506697654*^9, 
+  3.859386506865011*^9}, {3.8593867683503227`*^9, 3.859386778574093*^9}},
+ CellLabel->
+  "In[6306]:=",ExpressionUUID->"7178c4cc-dca9-472d-a70a-d0a9b210b9e7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.859386141758037*^9, {3.859386177992546*^9, 3.859386194546233*^9}, 
+   3.8593862843582897`*^9, {3.859386768779874*^9, 3.8593867789164963`*^9}},
+ CellLabel->
+  "Out[6308]=",ExpressionUUID->"e7643b99-b59c-4bec-8119-0b4eaa00489c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "The", " ", "SvonNeumannBinary", " ", "function", " ", "computes", " ", 
+      "the", " ", "entanglement", " ", "entropy", " ", "for", " ", "a", " ", 
+      "chosen", " ", "subsystem", " ", "of", " ", "qubits", " ", "in", " ", 
+      "an", " ", "n"}], "-", 
+     RowBox[{"qubit", " ", 
+      RowBox[{"system", ".", " ", "The"}], " ", "overall", " ", "system", " ",
+       "is", " ", "input", " ", "as", " ", "a", " ", "state", " ", 
+      RowBox[{"ket", ".", " ", "For"}], " ", "example"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "computing", " ", "the", " ", "entanglement", " ", "entropy", " ", "of", 
+      " ", "the", " ", "third", " ", "qubit", " ", "in", " ", "a", " ", "3"}],
+      "-", 
+     RowBox[{"qubit", " ", "system"}]}], ","}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"SvonNeumannBinary", "[", 
+   RowBox[{"threequbitsampleket", ",", 
+    RowBox[{"{", "1", "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.859386308937005*^9, 3.8593863101641197`*^9}, {
+  3.859386406915077*^9, 3.859386570337225*^9}, {3.859386715026565*^9, 
+  3.859386719091139*^9}, {3.85938678761417*^9, 3.859386787741324*^9}, {
+  3.8593869044539223`*^9, 3.859386909131958*^9}},
+ CellLabel->
+  "In[6505]:=",ExpressionUUID->"ea2fdd68-e41d-44a3-bb90-01cd89d12963"],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.859386557062434*^9, 3.859386570570731*^9}, {
+   3.859386716592783*^9, 3.859386719516111*^9}, 3.859386788043626*^9, 
+   3.85938696862665*^9},
+ CellLabel->
+  "Out[6505]=",ExpressionUUID->"8f7b55a9-0f90-4ce7-bdb4-99a0b38898d8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "The", " ", "EntropyVectorBuilder", " ", "function", " ", "computes", 
+      " ", "the", " ", "vonNeumann", " ", "entropy", " ", "for", " ", "all", 
+      " ", "subsytems", " ", "in", " ", "an", " ", "n"}], "-", 
+     RowBox[{"qubit", " ", "system"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "and", " ", "orders", " ", "the", " ", "set", " ", "of", " ", 
+      "entanglement", " ", "entropies", " ", "into", " ", "a", " ", "vector", 
+      " ", "of", " ", "length", " ", 
+      SuperscriptBox["2", "n"]}], "-", 
+     RowBox[{
+     "1.", " ", "The", " ", "order", " ", "of", " ", "this", " ", "vector", 
+      " ", "follows", " ", "the", " ", "natural", " ", "ordering"}]}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"e", ".", "g", ".", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SubscriptBox["S", "A"], ",", 
+         SubscriptBox["S", "B"], ",", 
+         SubscriptBox["S", "C"], ",", 
+         SubscriptBox["S", "AB"], ",", 
+         SubscriptBox["S", "AC"], ",", 
+         SubscriptBox["S", "BC"], ",", 
+         SubscriptBox["S", "ABC"]}], ")"}]}], " ", "for", " ", "a", " ", 
+      "3"}], "-", 
+     RowBox[{"qubit", " ", 
+      RowBox[{"system", "."}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"threequbitvacuumket", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"threequbitGHZket", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", "1", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "0", "}"}], ",", 
+       RowBox[{"{", "1", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"EntropyVectorBuilder", "[", "threequbitvacuumket", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+   "EntropyVectorBuilder", "[", "threequbitGHZket", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859386574420354*^9, 3.859386583009357*^9}, {
+  3.8593869768932343`*^9, 3.859387227371945*^9}, {3.859387431614602*^9, 
+  3.8593874343422537`*^9}},ExpressionUUID->"8387db48-774e-4a36-b118-\
+127dece37678"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.859386583370522*^9, 3.8593867947423143`*^9, 3.859386972030925*^9, {
+   3.859387209461721*^9, 3.859387227845045*^9}},
+ CellLabel->
+  "Out[6515]=",ExpressionUUID->"31ad5087-ba41-4a72-9965-d9b8c7b1141c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "0", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.859386583370522*^9, 3.8593867947423143`*^9, 3.859386972030925*^9, {
+   3.859387209461721*^9, 3.859387227848563*^9}},
+ CellLabel->
+  "Out[6516]=",ExpressionUUID->"483ab390-602d-4bf7-9cdd-4889eef34d50"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "The", " ", "ReducedEntropyVectorBuilder", " ", "function", " ", 
+     "computes", " ", "the", " ", "entropy", " ", "vector", " ", "for", " ", 
+     "a", " ", "chosen", " ", "state"}], ",", " ", 
+    RowBox[{
+    "then", " ", "reduces", " ", "the", " ", "entropy", " ", "vector", " ", 
+     "according", " ", "to", " ", "purity", " ", 
+     RowBox[{"constraints", ".", " ", "For"}], " ", "a", " ", "pure", " ", 
+     "system"}], ",", " ", 
+    RowBox[{
+    "the", " ", "entanglement", " ", "entropy", " ", "of", " ", "the", " ", 
+     "full", " ", "system", " ", "is", " ", "0"}], ",", " ", 
+    RowBox[{
+    "therefore", " ", "the", " ", "last", " ", "component", " ", "of", " ", 
+     "the", " ", "entropy", " ", "vector", " ", "will", " ", "always", " ", 
+     "be", " ", "0.", " ", "Furthermore"}], ",", " ", 
+    RowBox[{
+    "the", " ", "entanglement", " ", "entropy", " ", "of", " ", "any", " ", 
+     "subregion", " ", "will", " ", "be", " ", "equal", " ", "to", " ", "the",
+      " ", "entanglement", " ", "entropy", " ", "of", " ", "its", " ", 
+     "complement", " ", "subregion"}], ",", " ", 
+    RowBox[{"since", " ", "one", " ", "purifies", " ", "the", " ", 
+     RowBox[{"other", ".", " ", "Therefore"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "an", " ", "entropy", " ", "vector", " ", "of", " ", "length", " ", 
+      SuperscriptBox["2", "n"]}], "-", 
+     RowBox[{
+     "1", " ", "can", " ", "be", " ", "reduced", " ", "to", " ", "one", " ", 
+      "of", " ", "length", " ", 
+      SuperscriptBox["2", 
+       RowBox[{"n", "-", "1"}]]}], "-", 
+     RowBox[{
+     "1", " ", "if", " ", "the", " ", "overall", " ", "system", " ", "is", 
+      " ", 
+      RowBox[{"pure", "."}]}]}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ReducedEntropyVectorBuilder", "[", "threequbitvacuumket", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+   "ReducedEntropyVectorBuilder", "[", "threequbitGHZket", "]"}]}]}]], "Input",\
+
+ CellChangeTimes->{{3.859387263782016*^9, 3.8593874799245234`*^9}},
+ CellLabel->
+  "In[6517]:=",ExpressionUUID->"84f73cf6-7be9-427b-a851-199c1be79050"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8593874802444487`*^9},
+ CellLabel->
+  "Out[6517]=",ExpressionUUID->"3a599fcb-1356-460c-8253-4089ec61c3a0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8593874802490377`*^9},
+ CellLabel->
+  "Out[6518]=",ExpressionUUID->"1689b475-fbc9-4a1b-9142-3da917362824"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Examples of Quantum Logic Gates", "Chapter",
+ CellChangeTimes->{{3.859334900943425*^9, 3.8593349039110394`*^9}, {
+  3.8593842062179728`*^9, 
+  3.8593842074506693`*^9}},ExpressionUUID->"605cc759-27a1-4e85-805a-\
+f9468c208ad1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"The", " ", "HadamardAction"}], ",", " ", "PhaseAction", ",", " ", 
+    RowBox[{
+    "and", " ", "CNOTAction", " ", "functions", " ", "give", " ", "the", " ", 
+     "matrices", " ", "that", " ", "act", " ", "on", " ", "a", " ", "state", 
+     " ", "when", " ", "a", " ", "Hadamard"}], ",", " ", "Phase", ",", " ", 
+    RowBox[{"or", " ", "CNOT", " ", "gate", " ", "is", " ", "applied", " ", 
+     RowBox[{"respectively", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"For", " ", "example"}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "the", " ", "matrix", " ", "corresponding", " ", "to", " ", "a", " ", 
+      "Hadamard", " ", "gate", " ", "acting", " ", "on", " ", "the", " ", 
+      "first", " ", "qubit", " ", "of", " ", "a", " ", "2"}], "-", 
+     RowBox[{"qubit", " ", "system", " ", "is", " ", "given", " ", "by"}]}], 
+    ","}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dim", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"HadamardAction", "[", 
+    RowBox[{"2", ",", "1"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8593878357908573`*^9, 3.8593880174573803`*^9}},
+ CellLabel->
+  "In[6523]:=",ExpressionUUID->"2ac24818-56a9-4681-8951-9ab785632da7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8593879625198183`*^9, 3.8593879694253798`*^9}, 
+   3.8593880197322273`*^9},
+ CellLabel->
+  "Out[6524]=",ExpressionUUID->"07253141-ae93-425e-8e1b-fba9a6aa4a80"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Similarly", ",", " ", 
+    RowBox[{
+     RowBox[{
+     "a", " ", "phase", " ", "gate", " ", "applied", " ", "to", " ", "the", 
+      " ", "second", " ", "qubit", " ", "in", " ", "a", " ", "4"}], "-", 
+     RowBox[{
+     "qubit", " ", "system", " ", "is", " ", "described", " ", "by", " ", 
+      "the", " ", "matrix"}]}], ","}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dim", " ", "=", " ", "4"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"PhaseAction", "[", 
+    RowBox[{"4", ",", "2"}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.859388021707255*^9, 3.859388073518405*^9}, {
+  3.859388164907234*^9, 3.859388165682631*^9}},
+ CellLabel->
+  "In[6529]:=",ExpressionUUID->"d5ce0a33-89aa-43b8-80c0-5f2456416e68"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "\[ImaginaryI]", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "\[ImaginaryI]", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "\[ImaginaryI]", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "\[ImaginaryI]", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "\[ImaginaryI]", ",", "0", ",", "0", ",", "0", 
+     ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "\[ImaginaryI]", ",", "0", ",", "0", 
+     ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "\[ImaginaryI]", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
+      ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+     ",", "\[ImaginaryI]"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859388073760069*^9, 3.8593881776556892`*^9},
+ CellLabel->
+  "Out[6530]=",ExpressionUUID->"899699d1-07c3-463f-83b6-2e5b66c1fbc9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "A", " ", "CNOT", " ", "gate", " ", "acts", " ", "on", " ", "any", " ", 
+      "two", " ", "qubits", " ", "in", " ", "an", " ", "n"}], "-", 
+     RowBox[{"qubit", " ", 
+      RowBox[{"system", ".", " ", "For"}], " ", "example"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "the", " ", "matrix", " ", "corresponding", " ", "to", " ", "the", " ", 
+      "3"}], "-", 
+     RowBox[{
+     "qubit", " ", "CNOT", " ", "gate", " ", "with", " ", "the", " ", "first",
+       " ", "qubit", " ", "the", " ", "control"}]}], ",", " ", 
+    RowBox[{
+    "and", " ", "second", " ", "qubit", " ", "the", " ", "target", " ", 
+     "is"}], ","}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dim", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"CNOTAction", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859388077482025*^9, 3.85938817529006*^9}},
+ CellLabel->
+  "In[6527]:=",ExpressionUUID->"6feae633-80a1-43c2-a1fa-caf9ceef3c8d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", 
+     "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859388175625736*^9},
+ CellLabel->
+  "Out[6528]=",ExpressionUUID->"93379736-3151-495a-9827-1e83daa48d71"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Or", " ", "with", " ", "the", " ", "third", " ", "qubit", " ", "the", 
+     " ", "control"}], ",", " ", 
+    RowBox[{
+    "and", " ", "the", " ", "first", " ", "qubit", " ", "the", " ", 
+     "target"}], ","}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"dim", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"CNOTAction", "[", 
+    RowBox[{"3", ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8593881841576853`*^9, 3.859388219512165*^9}},
+ CellLabel->
+  "In[6531]:=",ExpressionUUID->"465576e3-329c-4374-b9b8-3f24aeb9bdf2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", 
+     "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.859388219753996*^9},
+ CellLabel->
+  "Out[6532]=",ExpressionUUID->"bdbef4b4-5a1c-47ba-ac9a-6739713a95f6"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Examples of Quantum Circuits", "Chapter",
+ CellChangeTimes->{{3.859334915118599*^9, 3.859334918870216*^9}, {
+  3.859384209482419*^9, 
+  3.859384214690608*^9}},ExpressionUUID->"c0a002c6-595a-4eb9-88dd-\
+9ccdafea4589"],
+
+Cell[CellGroupData[{
+
+Cell["Examples of Stabilizer State Functions", "Chapter",
+ CellChangeTimes->{{3.8593348128194513`*^9, 3.859334822334982*^9}, {
+  3.859384216506185*^9, 
+  3.8593842192665777`*^9}},ExpressionUUID->"5ff355a2-22aa-4f75-adcd-\
+dc41d8084164"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"twoqubitstabilizerstates", " ", "=", " ", 
+   RowBox[{"StabilizerStateSetGenerator", "[", "2", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.859388631860371*^9, 3.8593886757125196`*^9}, {
+  3.85938894484247*^9, 3.85938895394014*^9}},
+ CellLabel->
+  "In[6734]:=",ExpressionUUID->"816ce623-ce82-4c91-971a-73dd2557bff9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.8593889542452383`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"636ff27f-bda7-43cc-9b9e-a6b1d6e60631"],
+
+Cell[BoxData["7"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.859388954248678*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"b77afc72-f86e-496f-8ef2-56e6b18204a3"],
+
+Cell[BoxData["15"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.859388954254436*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"b7db1ec4-7a4b-42fe-9b4f-c075d3462316"],
+
+Cell[BoxData["29"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.859388954256711*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"04a994c3-c76d-4150-bf39-1a0bb427ead3"],
+
+Cell[BoxData["43"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.8593889542612886`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"c190131a-39e6-4f09-ad78-504765f008d8"],
+
+Cell[BoxData["55"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.859388954263361*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"0622c2e1-8a32-4bf1-9a92-cffc238de01b"],
+
+Cell[BoxData["60"], "Print",
+ CellChangeTimes->{
+  3.859388676297607*^9, {3.8593889456263847`*^9, 3.8593889542656116`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[6734]:=",ExpressionUUID->"cb3c29db-a9a4-43d7-832c-43a671a63ed7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"twoqubitstatemap", " ", "=", " ", 
+  RowBox[{
+  "StabilizerStateMap", "[", "twoqubitstabilizerstates", "]"}]}]], "Input",
+ CellChangeTimes->{{3.859388576870521*^9, 3.859388629937958*^9}, 
+   3.859388680893095*^9},
+ CellLabel->
+  "In[6727]:=",ExpressionUUID->"cfb93e7a-8341-4072-8925-07e5edd3342f"],
+
+Cell[BoxData["\<\"Gates Compiled.\"\>"], "Print",
+ CellChangeTimes->{3.859388681791473*^9},
+ CellLabel->
+  "During evaluation of \
+In[6727]:=",ExpressionUUID->"a60d882a-ea19-4ed8-8d38-6aeb618f157c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"H\"\>", ",", 
+               RowBox[{"{", "1", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"H\"\>", ",", 
+               RowBox[{"{", "2", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"P\"\>", ",", 
+               RowBox[{"{", "1", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"P\"\>", ",", 
+               RowBox[{"{", "2", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"CNOT\"\>", ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "2"}], "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           TemplateBox[{"351"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "\[ImaginaryI]", "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"P\"\>", ",", 
+               RowBox[{"{", "1", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "1", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "\[ImaginaryI]"}], "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"P\"\>", ",", 
+               RowBox[{"{", "2", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "1", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"CNOT\"\>", ",", 
+               RowBox[{"{", 
+                RowBox[{"1", ",", "2"}], "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"CNOT\"\>", ",", 
+               RowBox[{"{", 
+                RowBox[{"2", ",", "1"}], "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"{", "0", "}"}], ",", 
+               RowBox[{"{", "1", "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"-", "1"}], "}"}], ",", 
+               RowBox[{"{", "0", "}"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"{", "0", "}"}], "}"}]}], "}"}]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          PaneBox[
+           TagBox[
+            TooltipBox[
+             StyleBox[
+              StyleBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FEStrings", "sizeBriefExplanation"], StandardForm],
+                ImageSizeCache->{59., {2., 8.}}],
+               StripOnInput->False,
+               DynamicUpdating->True,
+               LineSpacing->{1, 2},
+               LineIndent->0,
+               LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLText",
+              StripOnInput->False],
+             StyleBox[
+              DynamicBox[
+               ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+                StandardForm]], DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}, StripOnInput -> False]],
+            Annotation[#, 
+             Style[
+              Dynamic[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+              DynamicUpdating -> True, LineIndent -> 0, 
+              LinebreakAdjustments -> {1., 100, 0, 0, 0}, 
+              LineSpacing -> {1, 2}], "Tooltip"]& ],
+           Alignment->Center,
+           BaselinePosition->Baseline,
+           ImageSize->{Automatic, {25, Full}}], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{51., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{51., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 6727, 27350105456305375224, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{56., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 6727, 27350105456305375224, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 6727, 27350105456305375224, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{77., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True,
+              LineSpacing->{1, 2},
+              LineIndent->0,
+              LinebreakAdjustments->{1., 100, 0, 0, 0}], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, {25, Full}}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+     GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{1.}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[27350105456305375224 === $SessionID, 
+   Out[6727], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{3.85938868200342*^9},
+ CellLabel->
+  "Out[6727]=",ExpressionUUID->"fdd21873-f9dc-4eda-8302-c6c9fda58522"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"twoqubitreducedentropyvectors", " ", "=", " ", 
+   RowBox[{"ReducedEntropyVectors", "[", "twoqubitstabilizerstates", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.85938878441574*^9, 3.859388802882593*^9}, {
+  3.859388974726944*^9, 3.859389007696701*^9}},
+ CellLabel->
+  "In[6741]:=",ExpressionUUID->"119044bd-fde3-4ec0-9132-88df3e5a60bb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples of Visualization Functions", "Chapter",
+ CellChangeTimes->{{3.859334941453367*^9, 3.859334944549057*^9}, {
+  3.859384220905177*^9, 
+  3.8593842222821827`*^9}},ExpressionUUID->"493f1190-f460-4fa5-b122-\
+5957035bdda7"],
+
+Cell[CellGroupData[{
+
+Cell["Graph Builders", "Section",
+ CellChangeTimes->{{3.859334949340372*^9, 
+  3.859334953420823*^9}},ExpressionUUID->"82617453-8c31-425a-8651-\
+b5923c06dd0b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "ReachabilityGraphBuilder", " ", "function", " ", "is", " ", 
+    "used", " ", "to", " ", "generate", " ", "graphs", " ", "from", " ", "a", 
+    " ", "map", " ", "of", " ", "stabilizer", " ", 
+    RowBox[{"states", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"desiredGates1", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"\"\<H\>\"", ",", 
+        RowBox[{"{", "1", "}"}]}], "}"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"ReachabilityGraphBuilder", "[", 
+    RowBox[{
+    "twoqubitstatemap", ",", "desiredGates1", ",", 
+     "twoqubitreducedentropyvectors", ",", "False", ",", "False", ",", 
+     "Automatic"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.859388535130385*^9, 3.859388550310967*^9}, {
+   3.859388699378224*^9, 3.8593887759793987`*^9}, {3.859388808726424*^9, 
+   3.859388816940791*^9}, {3.8593889587327547`*^9, 3.859388958875349*^9}, 
+   3.8593890132893333`*^9},
+ CellLabel->
+  "In[6742]:=",ExpressionUUID->"e3936f33-8eea-45b2-ba19-221d7e3dfaa4"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{{{0}, {0}, {0}, {1}}, {{0}, {0}, {1}, {-1}}, {{0}, {0}, {1}, {
+       0}}, {{0}, {0}, {1}, {
+         Complex[0, -1]}}, {{0}, {0}, {1}, {
+         Complex[0, 1]}}, {{0}, {0}, {1}, {1}}, {{0}, {1}, {-1}, {0}}, {{0}, {
+       1}, {0}, {-1}}, {{0}, {1}, {0}, {0}}, {{0}, {1}, {0}, {
+         Complex[0, -1]}}, {{0}, {1}, {0}, {
+         Complex[0, 1]}}, {{0}, {1}, {0}, {1}}, {{0}, {1}, {
+         Complex[0, -1]}, {0}}, {{0}, {1}, {
+         Complex[0, 1]}, {0}}, {{0}, {1}, {1}, {0}}, {{
+       1}, {-1}, {-1}, {-1}}, {{1}, {-1}, {-1}, {1}}, {{1}, {-1}, {0}, {
+       0}}, {{1}, {-1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}}, {{1}, {-1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}}, {{1}, {-1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}}, {{1}, {-1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}}, {{1}, {-1}, {1}, {-1}}, {{1}, {-1}, {1}, {1}}, {{
+       1}, {0}, {-1}, {0}}, {{1}, {0}, {0}, {-1}}, {{1}, {0}, {0}, {
+       0}}, {{1}, {0}, {0}, {
+         Complex[0, -1]}}, {{1}, {0}, {0}, {
+         Complex[0, 1]}}, {{1}, {0}, {0}, {1}}, {{1}, {0}, {
+         Complex[0, -1]}, {0}}, {{1}, {0}, {
+         Complex[0, 1]}, {0}}, {{1}, {0}, {1}, {0}}, {{1}, {
+         Complex[0, -1]}, {-1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, -1]}, {-1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, -1]}, {0}, {0}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}, {-1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}, {1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}, {-1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}, {1}}, {{1}, {
+         Complex[0, -1]}, {1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, -1]}, {1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, 1]}, {-1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, 1]}, {-1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, 1]}, {0}, {0}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}, {-1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}, {1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}, {-1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}, {1}}, {{1}, {
+         Complex[0, 1]}, {1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, 1]}, {1}, {
+         Complex[0, 1]}}, {{1}, {1}, {-1}, {-1}}, {{1}, {1}, {-1}, {1}}, {{
+       1}, {1}, {0}, {0}}, {{1}, {1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}}, {{1}, {1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}}, {{1}, {1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}}, {{1}, {1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}}, {{1}, {1}, {1}, {-1}}, {{1}, {1}, {1}, {1}}}, {
+      Null, {{27, 54}, {33, 60}, {36, 45}, {32, 58}, {30, 59}, {41, 51}, {9, 
+       18}, {29, 57}, {31, 55}, {25, 52}, {40, 48}, {38, 50}, {12, 23}, {26, 
+       53}, {3, 6}, {28, 56}, {42, 49}, {15, 24}, {37, 47}, {35, 43}, {11, 
+       21}, {14, 22}, {39, 44}, {1, 2}, {8, 17}, {4, 5}, {34, 46}, {13, 19}, {
+       10, 20}, {7, 16}}}, {
+      EdgeLabels -> {None}, 
+       EdgeStyle -> {
+        UndirectedEdge[{{1}, {0}, {0}, {-1}}, {{1}, {1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {0}}, {{1}, {-1}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {-1}, {0}}, {{1}, {1}, {-1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, -1]}}, {{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, -1]}, {0}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {-1}}, {{1}, {-1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, -1]}}, {{0}, {0}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {0}}, {{0}, {0}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {0}, {1}}, {{0}, {0}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {1}, {0}}, {{1}, {1}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, 1]}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, 1]}, {0}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, -1]}, {0}}, {{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {0}}, {{1}, {1}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {0}, {0}}, {{1}, {
+             Complex[0, 1]}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {1}}, {{1}, {1}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {-1}, {0}}, {{1}, {-1}, {-1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {-1}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, -1]}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, 1]}, {0}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {1}}, {{1}, {-1}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {1}, {0}}, {{1}, {-1}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {-1}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, 1]}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}}, VertexLabels -> {None}, VertexLabelStyle -> {
+         Directive[Italic, 
+          Thickness[Large], 7]}, 
+       VertexStyle -> {{{1}, {-1}, {-1}, {-1}} -> 
+         RGBColor[0, 1, 1], {{1}, {-1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {0}, {0}, {1}} -> 
+         RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {-1}, {1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {-1}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}, {-1}} -> RGBColor[0, 1, 1], {{1}, {-1}, {1}, {1}} -> 
+         RGBColor[0, 1, 1], {{1}, {0}, {
+            Complex[0, 1]}, {0}} -> RGBColor[0, 0, 1], {{1}, {0}, {0}, {-1}} -> 
+         RGBColor[0, 1, 1], {{1}, {1}, {1}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {-1}, {-1}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {-1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {0}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}, {-1}} -> RGBColor[0, 1, 1], {{0}, {0}, {0}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {0}, {
+            Complex[0, -1]}, {0}} -> RGBColor[0, 0, 1], {{0}, {1}, {0}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {0}, {1}, {0}} -> 
+         RGBColor[0, 0, 1], {{0}, {0}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{0}, {1}, {-1}, {0}} -> 
+         RGBColor[0, 1, 1], {{0}, {0}, {1}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}, {1}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {-1}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{0}, {1}, {1}, {0}} -> 
+         RGBColor[0, 1, 1], {{1}, {1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {1}, {-1}, {1}} -> 
+         RGBColor[0, 1, 1], {{1}, {0}, {0}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {-1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {
+            Complex[0, 1]}, {0}} -> RGBColor[0, 1, 1], {{1}, {1}, {1}, {-1}} -> 
+         RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {-1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {0}, {-1}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {0}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}, {-1}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}, {1}} -> RGBColor[0, 1, 1], {{0}, {0}, {1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {0}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {0}, {0}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{0}, {1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {0}, {0}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}, {1}} -> RGBColor[0, 0, 1], {{0}, {1}, {
+            Complex[0, -1]}, {0}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}, {1}} -> RGBColor[0, 0, 1], {{1}, {-1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {-1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{0}, {1}, {0}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}, {-1}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {-1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{0}, {0}, {1}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {1}, {-1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{0}, {0}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1:eJxlk80rRGEUh3/mNgn5iBWFJmVtQ5KasaSUjxBpFCmroZGyYENqSqbJgoXm
+LzDZszCzsBhlR1J20yTFaha3WAjNfc7incXt9vQ7957nnvPeyOrmzHpI0ujf
+9X/v/igNdak5dnUwPZ7VT77KYePk3dJeoyrRucGxp329GCdzx68bKuczfc+l
+WRVq2K0fvvUfTvVprPeBlbgqxuWtt4Vt+cbFr4uplL6Nc45P8ciLLKqucNmf
+ummVF0tX++Zh+sOuHz4wPjA+85NtO73yo7yfHD8YP+rpb/WBLzk++OED4wPj
+A9Mfpr/lQT/mNTIRz67Js3nBNt+W686EwpbD5D2PHWe7qrccJs+cJ9oP1WA5
+TB5avk+fqMlymPPHfKl3500/mOeZJzmMP/X4kPM8Of3Iqed/cHP2BbMvmH3x
+fuZNzv7M1zk/NfXBPu28Bd/3C6XIkWk=
+       "], {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{1, 2}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{3, 6}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{4, 5}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{7, 16}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{8, 17}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{9, 18}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{10, 20}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{11, 21}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{12, 23}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{13, 19}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{14, 22}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{15, 24}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{25, 52}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{26, 53}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{27, 54}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{28, 56}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{29, 57}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{30, 59}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{31, 55}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{32, 58}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{33, 60}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{34, 46}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{35, 43}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{36, 45}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{37, 47}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{38, 50}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{39, 44}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{40, 48}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{41, 51}]}, 
+         {RGBColor[0, 1, 0], Dashing[{}], LineBox[{42, 49}]}}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         {RGBColor[0, 0, 1], DiskBox[1, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[2, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[3, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[4, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[5, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[6, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[7, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[8, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[9, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[10, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[11, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[12, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[13, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[14, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[15, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[16, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[17, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[18, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[19, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[20, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[21, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[22, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[23, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[24, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[25, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[26, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[27, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[28, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[29, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[30, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[31, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[32, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[33, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[34, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[35, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[36, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[37, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[38, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[39, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[40, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[41, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[42, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[43, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[44, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[45, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[46, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[47, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[48, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[49, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[50, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[51, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[52, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[53, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[54, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[55, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[56, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[57, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[58, 0.033721200648370586]}, 
+         {RGBColor[0, 1, 1], DiskBox[59, 0.033721200648370586]}, 
+         {RGBColor[0, 0, 1], DiskBox[60, 0.033721200648370586]}}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{3.8593888182327623`*^9, 3.859388865602893*^9, 
+  3.859388960419672*^9, 3.859389013729827*^9},
+ CellLabel->
+  "Out[6743]=",ExpressionUUID->"54468b88-bfff-4f55-9239-3bf2a5982bf3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"desiredGates2", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<H\>\"", ",", 
+        RowBox[{"{", "1", "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<H\>\"", ",", 
+        RowBox[{"{", "2", "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<CNOT\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", "2"}], "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<CNOT\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"2", ",", "1"}], "}"}]}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ReachabilityGraphBuilder", "[", 
+  RowBox[{
+  "twoqubitstatemap", ",", "desiredGates2", ",", 
+   "twoqubitreducedentropyvectors", ",", "False", ",", "False", ",", 
+   "Automatic"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8593891085400267`*^9, 3.859389128302678*^9}},
+ CellLabel->
+  "In[6744]:=",ExpressionUUID->"aeb62458-dc64-4e56-954a-7adac89af4d7"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{{{0}, {0}, {0}, {1}}, {{0}, {0}, {1}, {-1}}, {{0}, {0}, {1}, {
+       0}}, {{0}, {0}, {1}, {
+         Complex[0, -1]}}, {{0}, {0}, {1}, {
+         Complex[0, 1]}}, {{0}, {0}, {1}, {1}}, {{0}, {1}, {-1}, {0}}, {{0}, {
+       1}, {0}, {-1}}, {{0}, {1}, {0}, {0}}, {{0}, {1}, {0}, {
+         Complex[0, -1]}}, {{0}, {1}, {0}, {
+         Complex[0, 1]}}, {{0}, {1}, {0}, {1}}, {{0}, {1}, {
+         Complex[0, -1]}, {0}}, {{0}, {1}, {
+         Complex[0, 1]}, {0}}, {{0}, {1}, {1}, {0}}, {{
+       1}, {-1}, {-1}, {-1}}, {{1}, {-1}, {-1}, {1}}, {{1}, {-1}, {0}, {
+       0}}, {{1}, {-1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}}, {{1}, {-1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}}, {{1}, {-1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}}, {{1}, {-1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}}, {{1}, {-1}, {1}, {-1}}, {{1}, {-1}, {1}, {1}}, {{
+       1}, {0}, {-1}, {0}}, {{1}, {0}, {0}, {-1}}, {{1}, {0}, {0}, {
+       0}}, {{1}, {0}, {0}, {
+         Complex[0, -1]}}, {{1}, {0}, {0}, {
+         Complex[0, 1]}}, {{1}, {0}, {0}, {1}}, {{1}, {0}, {
+         Complex[0, -1]}, {0}}, {{1}, {0}, {
+         Complex[0, 1]}, {0}}, {{1}, {0}, {1}, {0}}, {{1}, {
+         Complex[0, -1]}, {-1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, -1]}, {-1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, -1]}, {0}, {0}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}, {-1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}, {1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}, {-1}}, {{1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}, {1}}, {{1}, {
+         Complex[0, -1]}, {1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, -1]}, {1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, 1]}, {-1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, 1]}, {-1}, {
+         Complex[0, 1]}}, {{1}, {
+         Complex[0, 1]}, {0}, {0}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}, {-1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}, {1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}, {-1}}, {{1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}, {1}}, {{1}, {
+         Complex[0, 1]}, {1}, {
+         Complex[0, -1]}}, {{1}, {
+         Complex[0, 1]}, {1}, {
+         Complex[0, 1]}}, {{1}, {1}, {-1}, {-1}}, {{1}, {1}, {-1}, {1}}, {{
+       1}, {1}, {0}, {0}}, {{1}, {1}, {
+         Complex[0, -1]}, {
+         Complex[0, -1]}}, {{1}, {1}, {
+         Complex[0, -1]}, {
+         Complex[0, 1]}}, {{1}, {1}, {
+         Complex[0, 1]}, {
+         Complex[0, -1]}}, {{1}, {1}, {
+         Complex[0, 1]}, {
+         Complex[0, 1]}}, {{1}, {1}, {1}, {-1}}, {{1}, {1}, {1}, {1}}}, {
+      Null, {{27, 54}, {33, 60}, {36, 45}, {32, 58}, {30, 59}, {41, 51}, {9, 
+       18}, {29, 57}, {31, 55}, {25, 52}, {40, 48}, {38, 50}, {12, 23}, {26, 
+       53}, {3, 6}, {28, 56}, {42, 49}, {15, 24}, {37, 47}, {35, 43}, {11, 
+       21}, {14, 22}, {39, 44}, {1, 2}, {8, 17}, {4, 5}, {34, 46}, {13, 19}, {
+       10, 20}, {7, 16}, {27, 33}, {54, 60}, {45, 51}, {31, 32}, {30, 59}, {
+       36, 41}, {55, 58}, {18, 23}, {29, 50}, {3, 25}, {9, 12}, {38, 57}, {6, 
+       52}, {47, 48}, {24, 26}, {28, 42}, {49, 56}, {15, 53}, {37, 40}, {5, 
+       43}, {20, 21}, {22, 46}, {13, 44}, {1, 8}, {2, 17}, {4, 35}, {10, 
+       11}, {14, 34}, {19, 39}, {7, 16}, {27, 27}, {30, 54}, {33, 33}, {60, 
+       60}, {29, 45}, {32, 32}, {28, 36}, {49, 58}, {24, 59}, {51, 51}, {18, 
+       26}, {31, 31}, {25, 25}, {41, 41}, {1, 9}, {40, 57}, {38, 55}, {17, 
+       52}, {22, 48}, {42, 50}, {23, 23}, {3, 3}, {53, 53}, {12, 12}, {6, 
+       15}, {47, 56}, {35, 43}, {21, 39}, {44, 44}, {19, 37}, {10, 11}, {4, 
+       14}, {2, 7}, {8, 8}, {5, 13}, {20, 46}, {16, 16}, {34, 34}, {27, 27}, {
+       54, 54}, {30, 33}, {60, 60}, {45, 45}, {29, 32}, {36, 36}, {58, 58}, {
+       53, 59}, {49, 51}, {18, 18}, {28, 31}, {25, 26}, {38, 41}, {9, 9}, {56,
+        57}, {55, 55}, {52, 52}, {44, 48}, {47, 50}, {17, 23}, {1, 3}, {24, 
+       24}, {40, 42}, {12, 15}, {6, 6}, {43, 46}, {20, 21}, {22, 22}, {34, 
+       37}, {35, 39}, {11, 14}, {2, 2}, {7, 8}, {4, 5}, {10, 13}, {16, 16}, {
+       19, 19}}}, {EdgeLabels -> {None}, EdgeStyle -> {UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, 1]}}, {{1}, {0}, {
+             Complex[0, 1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {0}, {0}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {1}, {1}}, {{1}, {0}, {0}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {-1}}, {{0}, {1}, {-1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {0}}, {{1}, {1}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {1}}, {{0}, {1}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {-1}, {0}}, {{0}, {1}, {0}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {0}}, {{0}, {1}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}, {{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {1}, {-1}, {1}}, {{1}, {1}, {-1}, {1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {0}, {1}}, {{0}, {0}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, -1]}}, {{0}, {0}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {1}, {0}}, {{1}, {1}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {-1}}, {{0}, {0}, {1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {1}, {1}}, {{1}, {-1}, {1}, {1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, -1]}}, {{0}, {1}, {
+             Complex[0, -1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {0}, {0}}, {{1}, {
+             Complex[0, 1]}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, 1]}, {0}}, {{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {0}, {0}}, {{1}, {
+             Complex[0, 1]}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {1}, {0}, {0}}, {{1}, {1}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, 1]}, {0}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {1}}, {{0}, {0}, {1}, {1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {0}, {0}}, {{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {1}}, {{1}, {1}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {1}}, {{1}, {0}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, 1]}}, {{0}, {1}, {
+             Complex[0, 1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, 1]}, {0}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {-1}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {1}}, {{1}, {1}, {-1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {1}}, {{0}, {1}, {0}, {1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, 1]}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {-1}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {0}, {0}}, {{1}, {-1}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, -1]}}, {{1}, {0}, {
+             Complex[0, -1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, 1]}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, -1]}}, {{0}, {1}, {
+             Complex[0, 1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, -1]}, {0}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {1}, {1}, {1}}, {{1}, {1}, {1}, {1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, -1]}}, {{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {-1}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {1}, {-1}, {-1}}, {{1}, {1}, {-1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {0}}, {{1}, {0}, {-1}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {-1}, {0}}, {{1}, {-1}, {-1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {0}}, {{1}, {0}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, -1]}, {0}}, {{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{0}, {1}, {
+             Complex[0, -1]}, {0}}, {{1}, {
+             Complex[0, 1]}, {-1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {0}}, {{1}, {0}, {1}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {0}}, {{0}, {1}, {0}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {1}, {-1}, {1}}, {{1}, {1}, {1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {0}, {0}}, {{1}, {
+             Complex[0, -1]}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {0}, {
+             Complex[0, -1]}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {0}, {1}}, {{0}, {1}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {-1}}, {{1}, {-1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {0}, {1}}, {{0}, {0}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {1}}, {{1}, {-1}, {1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {0}}, {{1}, {-1}, {0}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {-1}, {0}}, {{1}, {1}, {-1}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {-1}, {1}}, {{1}, {1}, {-1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {-1}, {0}}, {{1}, {0}, {0}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, -1]}, {0}}, {{1}, {0}, {
+             Complex[0, 1]}, {0}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {-1}}, {{1}, {1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {1}, {0}, {0}}, {{1}, {1}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {-1}}, {{0}, {1}, {0}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {1}, {0}}, {{1}, {-1}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {0}, {0}}, {{1}, {-1}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, -1]}, {0}}, {{1}, {0}, {
+             Complex[0, -1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}, {1}}, {{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{1}, {0}, {0}, {1}}, {{1}, {1}, {0}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {0}, {1}}, {{0}, {1}, {0}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {0}, {0}}, {{1}, {0}, {0}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {0}}, {{0}, {0}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{0}, {0}, {1}, {
+             Complex[0, 1]}}, {{0}, {1}, {
+             Complex[0, -1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {1}}, {{0}, {1}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {0}, {
+             Complex[0, 1]}, {0}}, {{1}, {0}, {
+             Complex[0, 1]}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {1}, {-1}}, {{1}, {-1}, {1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}, {-1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {1}, {0}}, {{1}, {0}, {1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}, {1}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{0}, {1}, {0}, {-1}}, {{1}, {-1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {1}, {1}, {0}}, {{1}, {1}, {-1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}, {{1}, {
+             Complex[0, -1]}, {-1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {
+             Complex[0, -1]}, {1}, {
+             Complex[0, 1]}}, {{1}, {
+             Complex[0, 1]}, {1}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {0}, {-1}, {0}}, {{1}, {0}, {-1}, {0}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {-1}, {-1}}, {{1}, {-1}, {-1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {1}, {1}}, {{1}, {1}, {1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{}], 
+             Dashing[{Small}]}}}, 
+         UndirectedEdge[{{1}, {-1}, {-1}, {1}}, {{1}, {-1}, {1}, {-1}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{1}, {1}, {
+             Complex[0, -1]}, {
+             Complex[0, 1]}}, {{1}, {1}, {
+             Complex[0, 1]}, {
+             Complex[0, -1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, UndirectedEdge[{{0}, {1}, {0}, {
+             Complex[0, -1]}}, {{0}, {1}, {0}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{Small}]}}}, UndirectedEdge[{{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}, {{1}, {-1}, {
+             Complex[0, 1]}, {
+             Complex[0, 1]}}] -> {{
+            RGBColor[1, 0, 1], {
+             Dashing[{Small}], 
+             Dashing[{}]}}}, 
+         UndirectedEdge[{{0}, {0}, {1}, {0}}, {{0}, {0}, {1}, {1}}] -> {{
+            RGBColor[0, 1, 0], {
+             Dashing[{}]}}}}, VertexLabels -> {None}, VertexLabelStyle -> {
+         Directive[Italic, 
+          Thickness[Large], 7]}, 
+       VertexStyle -> {{{1}, {-1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {0}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}, {1}} -> RGBColor[0, 0, 1], {{0}, {0}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}, {-1}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {-1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {-1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{0}, {1}, {0}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {1}, {-1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {-1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {0}, {-1}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}, {-1}} -> RGBColor[0, 0, 1], {{0}, {0}, {1}, {1}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {0}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{0}, {0}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {0}, {1}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {-1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{0}, {1}, {1}, {0}} -> 
+         RGBColor[0, 1, 1], {{1}, {0}, {0}, {1}} -> 
+         RGBColor[0, 1, 1], {{0}, {1}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {-1}, {1}, {1}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {0}, {0}} -> RGBColor[0, 0, 1], {{1}, {1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {0}, {0}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {0}, {
+            Complex[0, 1]}, {0}} -> RGBColor[0, 0, 1], {{1}, {0}, {0}, {-1}} -> 
+         RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {0}, {0}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {-1}, {0}} -> 
+         RGBColor[0, 1, 1], {{1}, {-1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {-1}, {-1}, {-1}} -> 
+         RGBColor[0, 1, 1], {{0}, {1}, {
+            Complex[0, 1]}, {0}} -> RGBColor[0, 1, 1], {{1}, {0}, {0}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}, {1}} -> RGBColor[0, 1, 1], {{0}, {0}, {1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{0}, {0}, {0}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {-1}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {-1}, {1}, {-1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}, {-1}} -> RGBColor[0, 1, 1], {{1}, {1}, {
+            Complex[0, -1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {1}, {
+            Complex[0, 1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}, {1}} -> RGBColor[0, 1, 1], {{0}, {0}, {1}, {0}} -> 
+         RGBColor[0, 0, 1], {{1}, {1}, {1}, {-1}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, -1]}, {-1}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {1}, {1}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1], {{0}, {1}, {
+            Complex[0, -1]}, {0}} -> RGBColor[0, 1, 1], {{1}, {1}, {-1}, {1}} -> 
+         RGBColor[0, 1, 1], {{1}, {0}, {
+            Complex[0, -1]}, {0}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, -1]}, {
+            Complex[0, 1]}, {1}} -> RGBColor[0, 0, 1], {{1}, {
+            Complex[0, 1]}, {
+            Complex[0, 1]}, {-1}} -> RGBColor[0, 0, 1], {{0}, {1}, {0}, {1}} -> 
+         RGBColor[0, 0, 1], {{1}, {-1}, {-1}, {1}} -> 
+         RGBColor[0, 0, 1], {{0}, {1}, {0}, {
+            Complex[0, 1]}} -> RGBColor[0, 0, 1], {{1}, {1}, {
+            Complex[0, 1]}, {
+            Complex[0, -1]}} -> RGBColor[0, 1, 1], {{1}, {
+            Complex[0, 1]}, {-1}, {
+            Complex[0, -1]}} -> RGBColor[0, 0, 1]}}]]}, 
+    TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1: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
+3/It
+       "], {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{1, 2}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{1, 3}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{1, 8}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{1, 9}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{2, 64, 67, 69, 75, 77, 80, 2},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{2, 7}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{2, 17}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{3, 87, 90, 92, 98, 100, 103, 3},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{3, 6}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{3, 25}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            4, {9.629414607873848, -8.312269883224985}, 5}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            4, {9.834989503490608, -8.328983574980088}, 5}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{4, 14}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{4, 35}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{5, 13}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{5, 43}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{6, 142, 145, 147, 153, 155, 158, 6},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{6, 15}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{6, 52}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{7, 8}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            7, {2.577152777406056, -3.0554879776703374`}, 16}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            7, {2.578925924654612, -2.752251250460894}, 16}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{8, 197, 200, 202, 208, 210, 213, 8},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{8, 17}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{9, 220, 223, 225, 231, 233, 236, 9},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{9, 12}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{9, 18}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            10, {9.836653012279463, -9.530572922375587}, 11}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            10, {9.629008361948964, -9.54776445178677}, 11}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{10, 13}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{10, 20}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{11, 14}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{11, 21}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{12, 275, 278, 280, 286, 288, 291, 12},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{12, 15}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{12, 23}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{13, 19}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{13, 44}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{14, 22}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{14, 34}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{15, 24}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{15, 53}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{16, 298, 301, 303, 309, 311, 314, 16},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{16, 321, 324, 326, 332, 334, 337, 16},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{17, 23}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{17, 52}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{18, 344, 347, 349, 355, 357, 360, 18},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{18, 23}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{18, 26}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{19, 367, 370, 372, 378, 380, 383, 19},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{19, 37}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{19, 39}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            20, {10.064837530775758`, -9.476003743420634}, 21}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            20, {10.210083852543432`, -9.47917227456633}, 21}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{20, 46}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{21, 39}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{22, 422, 425, 427, 433, 435, 438, 22},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{22, 46}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{22, 48}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{23, 445, 448, 450, 456, 458, 461, 23},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{24, 468, 471, 473, 479, 481, 484, 24},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{24, 26}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{24, 59}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{25, 491, 494, 496, 502, 504, 507, 25},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{25, 26}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{25, 52}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{26, 53}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{27, 514, 517, 519, 525, 527, 530, 27},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{27, 537, 540, 542, 548, 550, 553, 27},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{27, 33}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{27, 54}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{28, 31}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{28, 36}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{28, 42}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{28, 56}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{29, 32}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{29, 45}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{29, 50}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{29, 57}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{30, 33}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{30, 54}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            30, {10.55087259411933, -3.186241282731291}, 59}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            30, {10.545000804496844`, -2.6864425615944674`}, 59}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{31, 592, 595, 597, 603, 605, 608, 31},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{31, 32}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{31, 55}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{32, 615, 618, 620, 626, 628, 631, 32},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{32, 58}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{33, 638, 641, 643, 649, 651, 654, 33},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{33, 60}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{34, 661, 664, 666, 672, 674, 677, 34},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{34, 37}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{34, 46}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{35, 39}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            35, {10.202706732492203`, -8.391303903054256}, 43}], 
+            0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{
+            35, {10.056550499609857`, -8.383525904941742}, 43}], 
+            0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{36, 716, 719, 721, 727, 729, 732, 36},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{36, 41}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{36, 45}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{37, 40}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{37, 47}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{38, 41}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{38, 50}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{38, 55}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{38, 57}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{39, 44}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{40, 42}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{40, 48}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{40, 57}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{41, 739, 742, 744, 750, 752, 755, 41},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{41, 51}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{42, 49}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{42, 50}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{43, 46}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{44, 762, 765, 767, 773, 775, 778, 44},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{44, 48}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{45, 785, 788, 790, 796, 798, 801, 45},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{45, 51}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{47, 48}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{47, 50}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{47, 56}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{49, 51}, 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{49, 56}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{49, 58}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{51, 808, 811, 813, 819, 821, 824, 51},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{52, 831, 834, 836, 842, 844, 847, 52},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{53, 854, 857, 859, 865, 867, 870, 53},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{53, 59}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{54, 877, 880, 882, 888, 890, 893, 54},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{54, 60}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{55, 900, 903, 905, 911, 913, 916, 55},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[0, 1, 0], Dashing[{Small}], 
+          {Arrowheads[0.], ArrowBox[{55, 58}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], ArrowBox[{56, 57}, 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{58, 923, 926, 928, 934, 936, 939, 58},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{60, 946, 949, 951, 957, 959, 962, 60},
+            SplineDegree->7], 0.06848568581529775]}}, 
+         {RGBColor[1, 0, 1], Dashing[{Small}], 
+          {Arrowheads[0.], 
+           ArrowBox[BezierCurveBox[{60, 969, 972, 974, 980, 982, 985, 60},
+            SplineDegree->7], 0.06848568581529775]}}}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         {RGBColor[0, 0, 1], DiskBox[1, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[2, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[3, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[4, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[5, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[6, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[7, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[8, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[9, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[10, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[11, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[12, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[13, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[14, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[15, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[16, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[17, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[18, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[19, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[20, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[21, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[22, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[23, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[24, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[25, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[26, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[27, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[28, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[29, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[30, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[31, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[32, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[33, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[34, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[35, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[36, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[37, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[38, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[39, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[40, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[41, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[42, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[43, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[44, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[45, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[46, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[47, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[48, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[49, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[50, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[51, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[52, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[53, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[54, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[55, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[56, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[57, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[58, 0.06848568581529775]}, 
+         {RGBColor[0, 1, 1], DiskBox[59, 0.06848568581529775]}, 
+         {RGBColor[0, 0, 1], DiskBox[60, 0.06848568581529775]}}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{3.8593891291576023`*^9},
+ CellLabel->
+  "Out[6745]=",ExpressionUUID->"98876d58-f2e5-47e3-a4ed-335c4aab5e83"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1321, 771},
+WindowMargins->{{Automatic, 32}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 236, 4, 98, "Title",ExpressionUUID->"9ad2b7bd-49c7-4233-8d78-37327eebd5e9"],
+Cell[819, 28, 266, 6, 35, "Text",ExpressionUUID->"0a929cd5-8dfe-4b31-853a-8ebd7eb0a502"],
+Cell[1088, 36, 1243, 29, 73, "Input",ExpressionUUID->"7d555748-0a85-4529-9484-8625b9ea8950"],
+Cell[CellGroupData[{
+Cell[2356, 69, 225, 4, 69, "Chapter",ExpressionUUID->"045accc8-5a36-476c-991b-605a96f9554c"],
+Cell[CellGroupData[{
+Cell[2606, 77, 1024, 23, 115, "Input",ExpressionUUID->"7b8520e8-2f2a-4b32-bb7b-c79989d865b0"],
+Cell[3633, 102, 350, 7, 34, "Output",ExpressionUUID->"de3ff486-797b-4ea0-b825-b92529d9a1ea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4020, 114, 1398, 31, 136, "Input",ExpressionUUID->"e8fe3df4-de87-4c07-a383-19d3b72155f6"],
+Cell[5421, 147, 1268, 38, 56, "Output",ExpressionUUID->"bb4e4d3c-feb2-4c86-9ad1-424c12f88420"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6738, 191, 233, 4, 58, "Chapter",ExpressionUUID->"6eddb26f-6ea0-4350-b0cb-40b75cfd30d2"],
+Cell[CellGroupData[{
+Cell[6996, 199, 908, 22, 73, "Input",ExpressionUUID->"3b9a3046-ecbf-497c-9107-c694a39c8f12"],
+Cell[7907, 223, 519, 13, 34, "Output",ExpressionUUID->"a22b2a6b-0303-4a73-8a81-32206e2fe8fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8463, 241, 1042, 26, 73, "Input",ExpressionUUID->"fed20258-73e5-4111-97aa-d67f2905f5bf"],
+Cell[9508, 269, 315, 9, 34, "Output",ExpressionUUID->"25491ca9-ee26-4ab5-9073-642bd0d1dfe0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9860, 283, 1036, 22, 73, "Input",ExpressionUUID->"4f5c2e04-b5bc-4225-89c2-4a595df4b535"],
+Cell[10899, 307, 319, 9, 34, "Output",ExpressionUUID->"d880d214-1746-4299-b2fb-f48255e44d67"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11255, 321, 1522, 35, 115, InheritFromParent,ExpressionUUID->"7178c4cc-dca9-472d-a70a-d0a9b210b9e7"],
+Cell[12780, 358, 620, 15, 34, "Output",ExpressionUUID->"e7643b99-b59c-4bec-8119-0b4eaa00489c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13437, 378, 1338, 28, 73, "Input",ExpressionUUID->"ea2fdd68-e41d-44a3-bb90-01cd89d12963"],
+Cell[14778, 408, 275, 5, 34, "Output",ExpressionUUID->"8f7b55a9-0f90-4ce7-bdb4-99a0b38898d8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15090, 418, 2628, 68, 178, "Input",ExpressionUUID->"8387db48-774e-4a36-b118-127dece37678"],
+Cell[17721, 488, 516, 14, 34, "Output",ExpressionUUID->"31ad5087-ba41-4a72-9965-d9b8c7b1141c"],
+Cell[18240, 504, 516, 14, 34, "Output",ExpressionUUID->"483ab390-602d-4bf7-9cdd-4889eef34d50"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18793, 523, 2167, 48, 157, "Input",ExpressionUUID->"84f73cf6-7be9-427b-a851-199c1be79050"],
+Cell[20963, 573, 283, 8, 34, "Output",ExpressionUUID->"3a599fcb-1356-460c-8253-4089ec61c3a0"],
+Cell[21249, 583, 283, 8, 94, "Output",ExpressionUUID->"1689b475-fbc9-4a1b-9142-3da917362824"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[21581, 597, 231, 4, 58, "Chapter",ExpressionUUID->"605cc759-27a1-4e85-805a-f9468c208ad1"],
+Cell[CellGroupData[{
+Cell[21837, 605, 1332, 29, 136, "Input",ExpressionUUID->"2ac24818-56a9-4681-8951-9ab785632da7"],
+Cell[23172, 636, 593, 16, 34, "Output",ExpressionUUID->"07253141-ae93-425e-8e1b-fba9a6aa4a80"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23802, 657, 812, 19, 94, "Input",ExpressionUUID->"d5ce0a33-89aa-43b8-80c0-5f2456416e68"],
+Cell[24617, 678, 3755, 85, 140, "Output",ExpressionUUID->"899699d1-07c3-463f-83b6-2e5b66c1fbc9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28409, 768, 1129, 29, 94, "Input",ExpressionUUID->"6feae633-80a1-43c2-a1fa-caf9ceef3c8d"],
+Cell[29541, 799, 1219, 37, 56, "Output",ExpressionUUID->"93379736-3151-495a-9827-1e83daa48d71"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30797, 841, 694, 19, 73, "Input",ExpressionUUID->"465576e3-329c-4374-b9b8-3f24aeb9bdf2"],
+Cell[31494, 862, 1219, 37, 56, "Output",ExpressionUUID->"bdbef4b4-5a1c-47ba-ac9a-6739713a95f6"]
+}, Open  ]]
+}, Open  ]],
+Cell[32740, 903, 222, 4, 69, "Chapter",ExpressionUUID->"c0a002c6-595a-4eb9-88dd-9ccdafea4589"],
+Cell[CellGroupData[{
+Cell[32987, 911, 236, 4, 58, "Chapter",ExpressionUUID->"5ff355a2-22aa-4f75-adcd-dc41d8084164"],
+Cell[CellGroupData[{
+Cell[33248, 919, 354, 7, 30, "Input",ExpressionUUID->"816ce623-ce82-4c91-971a-73dd2557bff9"],
+Cell[CellGroupData[{
+Cell[33627, 930, 229, 5, 24, "Print",ExpressionUUID->"636ff27f-bda7-43cc-9b9e-a6b1d6e60631"],
+Cell[33859, 937, 227, 5, 24, "Print",ExpressionUUID->"b77afc72-f86e-496f-8ef2-56e6b18204a3"],
+Cell[34089, 944, 228, 5, 24, "Print",ExpressionUUID->"b7db1ec4-7a4b-42fe-9b4f-c075d3462316"],
+Cell[34320, 951, 228, 5, 24, "Print",ExpressionUUID->"04a994c3-c76d-4150-bf39-1a0bb427ead3"],
+Cell[34551, 958, 230, 5, 24, "Print",ExpressionUUID->"c190131a-39e6-4f09-ad78-504765f008d8"],
+Cell[34784, 965, 228, 5, 24, "Print",ExpressionUUID->"0622c2e1-8a32-4bf1-9a92-cffc238de01b"],
+Cell[35015, 972, 230, 5, 24, "Print",ExpressionUUID->"cb3c29db-a9a4-43d7-832c-43a671a63ed7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35294, 983, 321, 7, 30, "Input",ExpressionUUID->"cfb93e7a-8341-4072-8925-07e5edd3342f"],
+Cell[35618, 992, 198, 4, 24, "Print",ExpressionUUID->"a60d882a-ea19-4ed8-8d38-6aeb618f157c"],
+Cell[35819, 998, 15857, 411, 184, "Output",ExpressionUUID->"fdd21873-f9dc-4eda-8302-c6c9fda58522"]
+}, Open  ]],
+Cell[51691, 1412, 378, 8, 30, "Input",ExpressionUUID->"119044bd-fde3-4ec0-9132-88df3e5a60bb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52106, 1425, 231, 4, 69, "Chapter",ExpressionUUID->"493f1190-f460-4fa5-b122-5957035bdda7"],
+Cell[CellGroupData[{
+Cell[52362, 1433, 159, 3, 67, "Section",ExpressionUUID->"82617453-8c31-425a-8651-b5923c06dd0b"],
+Cell[CellGroupData[{
+Cell[52546, 1440, 1145, 27, 115, "Input",ExpressionUUID->"e3936f33-8eea-45b2-ba19-221d7e3dfaa4"],
+Cell[53694, 1469, 20283, 410, 352, "Output",ExpressionUUID->"54468b88-bfff-4f55-9239-3bf2a5982bf3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74014, 1884, 1006, 28, 73, "Input",ExpressionUUID->"aeb62458-dc64-4e56-954a-7adac89af4d7"],
+Cell[75023, 1914, 79255, 1582, 322, "Output",ExpressionUUID->"98876d58-f2e5-47e3-a4ed-335c4aab5e83"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
